@@ -13,8 +13,10 @@ public class Commande implements IVisitable {
 
     @Override
     public void accept(IVisitor visitor) {
-        ligneList.forEach(ligne -> ligne.accept(visitor));
+
         visitor.visit(this);
+        ligneList.forEach(ligne -> ligne.accept(visitor));
+
     }
 
     public List<Ligne> getLigneList() {
@@ -22,7 +24,7 @@ public class Commande implements IVisitable {
     }
 
     public Commande(String name) {
-        //Coeurs
+
         this.name = name;
     }
 

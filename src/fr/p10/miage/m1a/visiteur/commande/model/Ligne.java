@@ -8,6 +8,17 @@ public class Ligne implements IVisitable {
     private String name;
 
     @Override
+    public String toString() {
+        return "Ligne{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    public Ligne(String name) {
+        this.name = name;
+    }
+
+    @Override
     public void accept(IVisitor visitor) {
         visitor.visit(this);
     }
